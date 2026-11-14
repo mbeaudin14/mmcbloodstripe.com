@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marines MC | BloodStripe Chapter,</title>
+<title>Marines MC | BloodStripe Chapter, Colorado Springs</title>
+<meta name="description" content="Meet the Marines MC BloodStripe Chapter in Colorado Springs, explore chapter photos and events, and get in touch.">
+<link rel="icon" type="image/jpeg" href="Image/image.jpg">
 <style>
   :root {
     --black: #0b0b0b;
@@ -18,7 +20,7 @@
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     background: var(--black); color: var(--text); line-height: 1.6;
   }
-  a, button, .card, .card img, .gallery-item { cursor: pointer; }
+  a, button { cursor: pointer; }
 
   /* ---------- NAV ---------- */
   nav {
@@ -46,7 +48,7 @@
   }
   .hero video {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; /* Change this line */
+  object-fit: cover;
   object-position: center center;
   z-index: 0;
 }
@@ -101,10 +103,8 @@
   .card {
     background: var(--black); border: 1px solid #2a2a2a;
     border-top: 4px solid var(--scarlet); overflow: hidden; text-align: left;
-    opacity: 0; transform: translateY(40px);
-    transition: opacity .7s, transform .7s, border-color .25s, box-shadow .25s;
+    transition: border-color .25s, box-shadow .25s;
   }
-  .card.show { opacity: 1; transform: translateY(0); }
   .card:hover { border-top-color: var(--gold); box-shadow: 0 10px 25px rgba(242,197,0,.15); }
   .card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform .4s; }
   .card:hover img { transform: scale(1.06); }
@@ -210,16 +210,76 @@
 nav ul { gap: 8px; font-size: 0.75em; }
 form { padding: 20px; }
 .logo-nav { height: 30px; }
+
+/* Responsive navigation and accessible interactions */
+html { scroll-padding-top: 85px; }
+nav { gap: 20px; }
+nav ul { gap: 24px; font-size: 1rem; }
+nav a { font-size: .85rem; }
+.menu-toggle { display: none; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 300; padding: 10px 16px; background: var(--gold); color: var(--black); transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.hero { min-height: 640px; height: 100svh; }
+.hero video { background: var(--black); }
+.hero-content { padding-top: 75px; }
+.video-control { position: absolute; z-index: 3; right: 24px; bottom: 24px; padding: 10px 14px; color: var(--text); background: rgba(0,0,0,.8); border: 1px solid var(--gold); font: inherit; }
+.video-control[hidden] { display: none; }
+.video-status { position: absolute; z-index: 3; right: 24px; bottom: 76px; max-width: 20rem; background: var(--black); color: #fff; }
+.event-date { color: #fff; }
+.btn, form button { color: #fff; }
+.intro p + p { margin-top: 1.25rem; }
+.gallery-link { display: block; overflow: hidden; }
+.gallery-link:focus-visible { outline-offset: -4px; }
+.lightbox { display: none; position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 60px 20px 20px; border: 0; background: rgba(0,0,0,.94); color: var(--text); cursor: default; }
+.lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.lightbox::backdrop { background: rgba(0,0,0,.75); }
+.lightbox img { max-width: 100%; max-height: calc(100dvh - 130px); }
+.lightbox .close { position: absolute; top: 12px; right: 18px; padding: 4px 12px; border: 1px solid var(--gold); background: var(--black); color: var(--gold); font-size: 2rem; cursor: pointer; }
+.contact-intro { max-width: 600px; margin: -15px auto 28px; }
+.event-year { font-size: .8rem; letter-spacing: 1px; }
+@media (max-width: 700px) {
+  nav { padding: 10px 18px; min-height: 64px; flex-wrap: wrap; }
+  .brand { display: block; font-size: .95rem; }
+  .logo-nav { height: 40px; margin-left: auto; }
+  .js .menu-toggle { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--gold); background: transparent; color: var(--text); font: inherit; }
+  nav ul { width: 100%; flex-wrap: wrap; gap: 4px 16px; order: 4; font-size: 1rem; }
+  nav ul a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 2px; }
+  .js nav ul { display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0; }
+  .js nav ul.open { display: flex; }
+  .js nav ul a { display: flex; }
+  .hero { display: flex; flex-direction: column; height: auto; min-height: 0; padding-top: 64px; }
+  .hero video { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+  .hero::after { display: none; }
+  .hero-content { padding: 34px 20px 48px; }
+  .hero-content h1 { font-size: clamp(2rem, 9vw, 3rem); letter-spacing: 2px; }
+  .hero-content h2 { letter-spacing: 3px; }
+  .video-control { top: 74px; bottom: auto; right: 12px; }
+  .video-status { top: 124px; bottom: auto; right: 12px; }
+  .card-section { padding: 65px 6%; }
+  .card-section > h2 { font-size: 1.8rem; }
+  .card-container { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .btn { max-width: 100%; }
+  .event-date .day { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .card:hover img { transform: none; }
+}
 </style>
 </head>
 <body>
-<div class="lightbox" id="lightbox">
-  <span class="close">&times;</span>
-  <img src="" alt="Enlarged photo">
-</div>
-<nav>
+<a href="#main" class="skip-link">Skip to content</a>
+<dialog class="lightbox" id="lightbox" aria-label="Gallery photo">
+  <button class="close" type="button" aria-label="Close photo">&times;</button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+<nav aria-label="Main navigation">
   <div class="brand">MARINES MC</div>
-  <ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+  <ul id="primary-navigation">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="#gallery">Gallery</a></li>
@@ -231,11 +291,14 @@ form { padding: 20px; }
   </div>
 </nav>
 
+<main id="main">
 <!-- HERO SECTION -->
 <section class="hero" id="home">
-  <video autoplay muted loop playsinline>
-    <source src="Video 1.mp4" type="video/mp4">
+  <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="Image/optimized/hero-poster.jpg" aria-label="Background video of the Marines MC BloodStripe Chapter">
+    <source src="hero-optimized.mp4" type="video/mp4">
   </video>
+  <button class="video-control" type="button" hidden>Pause video</button>
+  <p class="video-status" id="video-status" role="status"></p>
   <div class="hero-content">
     <h1>Marines MC</h1>
     <h2>BloodStripe Chapter</h2>
@@ -250,11 +313,14 @@ form { padding: 20px; }
 <section id="about" class="card-section alt">
   <h2>About Us</h2>
   <div class="bar"></div>
-  <p class="intro">
+  <div class="intro">
+    <p>
     Marines MC came into existence on November 10, 1994, in El Paso, Texas. The first national run/meeting was at the Four Corners Rally in Ignacio, CO, in September of 1996, followed by one in Angel Fire, NM, in May 1999. Subsequent runs/meetings have convened at Cripple Creek, CO. A national run/meeting is now held every two years at a location designated by and agreed upon by the Membership.
-    <br><br>
+    </p>
+    <p>
     The BloodStripe Chapter of the Marines Motorcycle Club is a proud and recognized chapter committed to honoring the traditions, values, and esprit de corps of the United States Marine Corps. We are a brotherhood built on loyalty, faithfulness, and respect, with a focus on family first, supporting one another, and serving our communities through charity and fellowship. Our chapter welcomes those who are interested, and we invite you to learn more about who we are and what we stand for.
-  </p>
+    </p>
+  </div>
   <div class="card-container">
     <div class="card text-card"><h3>HONOR</h3><p>Standing by the code we live by.</p></div>
     <div class="card text-card"><h3>COURAGE</h3><p>Facing the road ahead together.</p></div>
@@ -269,19 +335,19 @@ form { padding: 20px; }
   <div class="bar"></div>
   <div class="card-container">
     <div class="card gallery-item">
-      <img src="Image/LakeBackMMC.jpeg" alt="Chapter photo 1">
+      <a class="gallery-link" href="Image/LakeBackMMC.jpeg" aria-label="Enlarge Chapter Ride photo"><img src="Image/optimized/chapter-ride.webp" alt="Chapter members at Blue Mesa Reservoir" loading="lazy" decoding="async"></a>
       <div class="card-content"><h3>Chapter Ride</h3><p>Great ride through Blue Mesa Reservoir.</p></div>
     </div>
     <div class="card gallery-item">
-      <img src="Image/Nationals_2026.jpeg" alt="Chapter photo 2">
+      <a class="gallery-link" href="Image/Nationals_2026.jpeg" aria-label="Enlarge Brotherhood photo"><img src="Image/optimized/nationals.webp" alt="Marines MC members at the 2026 national rally" loading="lazy" decoding="async"></a>
       <div class="card-content"><h3>Brotherhood</h3><p>MMC National Rally 2026.</p></div>
     </div>
     <div class="card gallery-item">
-      <img src="Image/Firewatch.jpg" alt="Chapter photo 3">
+      <a class="gallery-link" href="Image/Firewatch.jpg" aria-label="Enlarge Charity Event photo"><img src="Image/optimized/firewatch.webp" alt="Firewatch at the Veterans Memorial wall" loading="lazy" decoding="async"></a>
       <div class="card-content"><h3>Charity Event</h3><p>Firewatch for the Veterans Memorial wall.</p></div>
     </div>
     <div class="card gallery-item">
-      <img src="Image/On_The_Road.jpg" alt="Chapter photo 4">
+      <a class="gallery-link" href="Image/On_The_Road.jpg" aria-label="Enlarge On the Road photo"><img src="Image/optimized/on-the-road.webp" alt="Marines MC chapter on the road" loading="lazy" decoding="async"></a>
       <div class="card-content"><h3>On the Road</h3><p>Pounding Pavement, and some scenic views along the way.</p></div>
     </div>
   </div>
@@ -298,6 +364,7 @@ form { padding: 20px; }
   <div class="event-date">
     <span class="month">November</span>
     <span class="day">14th</span>
+    <span class="event-year">2026</span>
   </div>
   <div class="event-info">
     <h3>Annual BUFA Meeting for Event Registration</h3>
@@ -311,6 +378,7 @@ form { padding: 20px; }
       <div class="event-date">
         <span class="month">November</span>
         <span class="day">21st</span>
+        <span class="event-year">2026</span>
       </div>
       <div class="event-info">
         <h3>Chapter Church</h3>
@@ -323,6 +391,7 @@ form { padding: 20px; }
   <div class="event-date">
     <span class="month">December</span>
     <span class="day">19th</span>
+    <span class="event-year">2026</span>
   </div>
   <div class="event-info">
     <h3>Bloodstripe Chapter Christmas Party</h3>
@@ -331,7 +400,8 @@ form { padding: 20px; }
    <img
   class="event-flyer"
   src="Image/Christmas Party Flyer.jpeg"
-  alt="Flyer for the Bloodstripe Chapter Marine Corps birthday celebration on November 7"
+  alt="Christmas party flyer for December 19, 2026, at Judges Char-Grill in Woodland Park"
+  loading="lazy" decoding="async"
 />
   </div>
 </div>
@@ -340,13 +410,13 @@ form { padding: 20px; }
 
     </div>
 
-  </div>
 </section>
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="card-section alt">
   <h2>Contact Us</h2>
   <div class="bar"></div>
+  <p class="contact-intro">Interested in learning more about the BloodStripe Chapter? Send us your information and a member will get in touch.</p>
   <form action="https://formsubmit.co/f16docaceres@gmail.com" method="POST">
     <input type="hidden" name="_cc" value="jrram13@gmail.com,MBeaudin14@gmail.com">
     <input type="hidden" name="_subject" value="New BloodStripe Intake Form">
@@ -357,39 +427,40 @@ form { padding: 20px; }
     <div class="row">
       <div>
         <label for="first">First Name</label>
-        <input type="text" id="first" name="First Name" required>
+        <input type="text" id="first" name="First Name" autocomplete="given-name" required>
       </div>
       <div>
         <label for="last">Last Name</label>
-        <input type="text" id="last" name="Last Name" required>
+        <input type="text" id="last" name="Last Name" autocomplete="family-name" required>
       </div>
     </div>
 
     <label for="email">Email</label>
-    <input type="email" id="email" name="Email" required>
+    <input type="email" id="email" name="Email" autocomplete="email" required>
 
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="Phone" required>
+    <input type="tel" id="phone" name="Phone" autocomplete="tel" required>
 
     <label for="city">City</label>
-    <input type="text" id="city" name="City" required>
+    <input type="text" id="city" name="City" autocomplete="address-level2" required>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Send your information</button>
   </form>
 </section>
 <!-- SOCIAL SECTION -->
 <section class="social-section">
   <h3>Follow Us</h3>
   <div class="social-links">
-    <a href="https://www.facebook.com/COSpringsMarinesMC?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" title="Facebook">f</a>
-    <a href="https://www.instagram.com/marinesmc_coloradosprings?mdxt=bG04dWlhZzU5YWRh&utm_source=qr" target="_blank" title="Instagram">📷</a>
+    <a href="https://www.facebook.com/COSpringsMarinesMC?mibextid=wwXIfr&amp;mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">f</a>
+    <a href="https://www.instagram.com/marinesmc_coloradosprings?mdxt=bG04dWlhZzU5YWRh&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">📷</a>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-content">
-    <p>&copy; <span id="year"></span> Marines MC BloodStripe Chapter. All rights reserved.</p>
+    <p>&copy; <span id="year">2026</span> Marines MC BloodStripe Chapter. All rights reserved.</p>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -399,44 +470,88 @@ form { padding: 20px; }
 </footer>
 
 <script>
-  // 1 Smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-    });
-  });
-
-  // 2 Card scroll animation
-  const cards = document.querySelectorAll(".card");
-  const revealCards = () => {
-    const triggerBottom = window.innerHeight * 0.88;
-    cards.forEach(card => {
-      if (card.getBoundingClientRect().top < triggerBottom) card.classList.add("show");
-    });
-  };
-  window.addEventListener("scroll", revealCards);
-  revealCards();
-
-  // 3 Dynamic year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
- // 4 Gallery lightbox
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = lightbox.querySelector("img");
 
-document.querySelectorAll(".gallery-item img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add("open");
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.getElementById("primary-navigation");
+  function setMenuOpen(open) {
+    navigation.classList.toggle("open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.textContent = open ? "Close" : "Menu";
+  }
+  menuButton.addEventListener("click", () => setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true"));
+  navigation.addEventListener("click", event => {
+    if (event.target.closest("a")) setMenuOpen(false);
   });
-});
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+  window.matchMedia("(min-width: 701px)").addEventListener("change", event => {
+    if (event.matches) setMenuOpen(false);
+  });
+  document.documentElement.classList.add("js");
 
-lightbox.addEventListener("click", () => lightbox.classList.remove("open"));
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") lightbox.classList.remove("open");
-}); 
+  const heroVideo = document.getElementById("hero-video");
+  const videoButton = document.querySelector(".video-control");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function syncVideoButton() {
+    videoButton.textContent = heroVideo.paused ? "Play video" : "Pause video";
+  }
+  if (reducedMotion.matches) {
+    heroVideo.autoplay = false;
+    heroVideo.pause();
+  }
+  reducedMotion.addEventListener("change", event => {
+    if (event.matches) heroVideo.pause();
+  });
+  heroVideo.addEventListener("play", syncVideoButton);
+  heroVideo.addEventListener("pause", syncVideoButton);
+  videoButton.addEventListener("click", async () => {
+    if (heroVideo.paused) {
+      try {
+        await heroVideo.play();
+        document.getElementById("video-status").textContent = "";
+      } catch (error) {
+        console.error("Unable to play the background video:", error);
+        document.getElementById("video-status").textContent = "The video could not be played. Please try again.";
+      }
+    } else {
+      heroVideo.pause();
+    }
+  });
+  syncVideoButton();
+  videoButton.hidden = false;
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+  const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+  let galleryTrigger = null;
+  document.querySelectorAll(".gallery-link").forEach(link => {
+    link.addEventListener("click", event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || typeof lightbox.showModal !== "function") return;
+      event.preventDefault();
+      galleryTrigger = link;
+      lightboxImg.alt = link.querySelector("img").alt;
+      lightboxImg.src = link.href;
+      lightboxCaption.textContent = lightboxImg.alt;
+      lightbox.showModal();
+      lightbox.querySelector(".close").focus();
+    });
+  });
+  lightboxImg.addEventListener("error", () => {
+    lightboxCaption.textContent = "The full-size photo could not be loaded.";
+  });
+  lightbox.querySelector(".close").addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("close", () => {
+    lightboxImg.removeAttribute("src");
+    if (galleryTrigger) galleryTrigger.focus();
+  });
 </script>
 </body>
 </html>
