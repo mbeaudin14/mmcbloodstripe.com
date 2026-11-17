@@ -42,7 +42,7 @@ const events = [
   [5, "6", "37th Annual United Run", ""],
   [5, "12", "ALR Post 5 - PFC Floyd Lindstrom Poker Run", "9am · AL Post 5"],
   [5, "13", "B.A.C.A. – 2nd Annual Awareness Run", "10am · TBD"],
-  [5, "26", "Marines MC – 5th Annual Marine Corps Birthday Ball Poker Run", "11am · Mad Hatter"],
+  [5, "26", "Marines MC – 5th Annual Poker Run", "11am · Mad Hatter Saloon, Cascade, CO"],
   [5, "27", "ALR Post 209 - High Country Memorial Run", "10am · AL Post 209"],
   [5, "27", "Geezers MC – 3nd Annual Poker Run", "10am · TBD"],
   [5, "28", "BUFA Meeting", ""],
