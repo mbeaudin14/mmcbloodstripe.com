@@ -188,6 +188,8 @@
   .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--gold); font-size: .9rem; }
   .footer-links a { color: var(--text); text-decoration: none; margin-left: 18px; transition: color .2s; }
   .footer-links a:hover { color: var(--gold); }
+  .site-credit { margin-top: 1rem; color: var(--text); font-size: .8rem; }
+  .site-credit a { color: inherit; text-underline-offset: .2em; }
 
   .disclaimer { font-size: .85rem; opacity: 0.8; margin-top: 20px; font-style: italic; }
 
